@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.env
+.env.*
+!.env.example
+.vercel
+.DS_Store
+# fotos originais podem ter EXIF/GPS: nunca versionar
+fotos/originais/
+fotos/tmp/
