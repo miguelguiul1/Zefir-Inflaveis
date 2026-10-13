@@ -8,9 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "test": "node scripts/teste-mensagem.mjs",
     "fotos:baixar": "node scripts/fotos-baixar.mjs",
+    "fotos:revisao": "node scripts/fotos-revisao.mjs",
     "fotos:processar": "node scripts/fotos-processar.mjs",
-    "cores": "node scripts/amostrar-cores.mjs"
+    "cores": "node scripts/amostrar-cores.mjs",
+    "contraste": "node scripts/contraste.mjs"
   },
   "dependencies": {
     "@fontsource/barlow": "^5.3.0",

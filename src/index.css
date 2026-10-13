@@ -14,14 +14,14 @@
 /*
   TOKENS DE COR
   ---------------------------------------------------------------------------
-  O documento pede amostrar as cores do logo (logo-tipo.png), das fotos dos
-  botes e das amostras de tecido das fichas. O domínio zefir.com.br estava
-  BLOQUEADO na rede do ambiente em que este protótipo foi feito, então NENHUMA
-  cor abaixo foi amostrada ainda.
+  Rodada 2: a amostragem continua PENDENTE. O logo (public/logo-original.png)
+  e as fotos (fotos/originais/) não estavam no repositório, então nenhuma cor
+  abaixo foi tirada de arquivo da Zefir. Não invente origem para elas.
 
-  TODO-CONFIRMAR: rodar `npm run fotos:baixar` e `npm run cores` numa máquina
-  com acesso ao site. O script grava docs/paleta-amostrada.md com a cor de cada
-  fonte. Trocar os valores aqui e atualizar a coluna "fonte".
+  TODO-CONFIRMAR: com os arquivos no lugar, rodar `npm run cores`. O script
+  grava docs/paleta-amostrada.md com cada cor, o arquivo e a coordenada do
+  pixel. Trocar os valores aqui citando "arquivo (x, y)" na coluna fonte e
+  rodar `npm run contraste` (falha se algum par ficar abaixo do AA).
 
   token            valor      fonte
   papel            #f1ede3    provisória: papel de desenho (conceito), não amostrada
@@ -35,8 +35,7 @@
   todo             #f2d03b    marcação de revisão (só no modo proposta)
   todo-claro       #f8e8a6    fundo do texto da marcação de revisão
 
-  Contraste medido (WCAG): tinta/papel 13.8:1 · tinta-2/papel 6.5:1 ·
-  marca/papel 5.5:1 · papel/noite 15:1 · marca-viva/noite 5.8:1 · tinta/todo 10.7:1
+  Contraste de cada par usado no site: docs/contraste.md (npm run contraste).
 */
 @theme {
   --color-papel: #f1ede3;
@@ -127,6 +126,11 @@
     .vazado {
       color: var(--traco);
     }
+  }
+
+  /* painel atrás do texto sobre foto. O valor (80%) é lido por scripts/contraste.mjs */
+  .painel-foto {
+    background-color: color-mix(in srgb, var(--color-noite) 80%, transparent);
   }
 
   .ficha {

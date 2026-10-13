@@ -1,9 +1,9 @@
 {
-  "_leia": "Fotos e imagens de origem. Só entra no site foto com \"aprovada\": true, depois de alguém olhar a imagem e conferir: nenhuma pessoa sem autorização; placas, rostos de terceiros e marcas de outras empresas (inclusive marca de motor) cobertos por \"desfocar\". Regiões em fração da imagem (0 a 1): {\"x\":0.1,\"y\":0.2,\"w\":0.15,\"h\":0.1}. \"usoNoSite\": entrada | uso | fabrica. \"amostras\": regiões para amostrar cor (ex.: amostra de tecido).",
+  "_leia": "Imagens de origem. Coloque as fotos em fotos/originais/ e rode npm run fotos:revisao: cada arquivo novo entra aqui com \"aprovada\": false. Uma foto só vai para o site com \"aprovada\": true, que só é marcado depois da sua revisão (pessoas, rostos de terceiros, placas, marcas de motor ou de outras empresas). \"desfocar\": regiões em fração da imagem (0 a 1), ex.: {\"x\":0.1,\"y\":0.2,\"w\":0.15,\"h\":0.1}. \"usoNoSite\": entrada | uso | fabrica. \"amostras\": regiões para amostrar cor, ex.: {\"nome\":\"tecido cinza\",\"x\":0.4,\"y\":0.6,\"w\":0.05,\"h\":0.05}. \"pontosRevisao\": o que conferir na foto.",
   "itens": [
     {
-      "arquivo": "logo-tipo.png",
-      "url": "https://zefir.com.br/wp-content/uploads/2023/10/logo-tipo.png",
+      "arquivo": "logo-original.png",
+      "local": "public",
       "somenteAmostra": true
     },
     {
@@ -14,7 +14,8 @@
       "aprovada": false,
       "alt": "TODO-CONFIRMAR: descrever a foto depois de vê-la",
       "desfocar": [],
-      "amostras": []
+      "amostras": [],
+      "pontosRevisao": []
     }
   ]
 }

@@ -9,9 +9,9 @@ export function Revendedores() {
           Revendedores
         </h2>
         <p className="text-lg">
-          Prefere comprar de um representante perto de você?{' '}
+          Para comprar de um representante, a lista está no{' '}
           <a href={CONTATO.revendedoresUrl} target="_blank" rel={REL_EXTERNO} className="link-tinta font-medium">
-            Veja a lista de representantes
+            site atual da Zefir
           </a>
           .
         </p>

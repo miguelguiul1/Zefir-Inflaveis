@@ -23,8 +23,8 @@ export function Fabrica() {
             nasceu a Zefir.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-papel/80">
-            Hoje a Zefir é fábrica independente. Faz bote, balsa, caiaque, boia e brinquedo, e os acessórios saem
-            daqui mesmo.
+            Hoje é fábrica independente. Além dos botes, faz balsa de rafting, caiaque, boia de sinalização e
+            brinquedo.
           </p>
           <p className="mt-6">
             <Todo className="text-tinta">

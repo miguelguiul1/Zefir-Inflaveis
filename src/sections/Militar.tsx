@@ -7,12 +7,12 @@ export function Militar() {
             Linha Militar
           </h2>
           <p className="mt-4 text-lg leading-relaxed">
-            A Zefir é fornecedora oficial do Exército, da Marinha e dos Bombeiros. Compra institucional é tratada
-            direto com a fábrica.
+            A Zefir é fornecedora oficial do Exército, da Marinha e dos Bombeiros. Se a compra é para uma
+            instituição, fale com a gente pelo contato abaixo.
           </p>
           <p className="mt-4">
             <a href="#contato" className="link-tinta font-medium">
-              Falar com a fábrica
+              Ir para o contato
             </a>
           </p>
         </div>

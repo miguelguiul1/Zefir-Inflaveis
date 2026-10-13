@@ -9,3 +9,6 @@ dist
 # fotos originais podem ter EXIF/GPS: nunca versionar
 fotos/originais/
 fotos/tmp/
+# conversões e miniaturas de fotos ainda não aprovadas: ficam só na máquina
+fotos/convertidas/
+fotos/revisao/

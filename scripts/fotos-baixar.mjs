@@ -1,5 +1,5 @@
-// Baixa as imagens listadas em fotos/fontes.json para fotos/originais/ (fora do git).
-// Só aceita https://zefir.com.br. Rode numa máquina com acesso ao site.
+// Baixa as imagens que têm "url" em fotos/fontes.json para fotos/originais/ (fora do git).
+// Só aceita https://zefir.com.br. Opcional: as fotos também podem ser copiadas à mão.
 import fs from 'node:fs'
 import path from 'node:path'
 import { ORIGINAIS, lerFontes } from './_comum.mjs'
@@ -7,6 +7,7 @@ import { ORIGINAIS, lerFontes } from './_comum.mjs'
 fs.mkdirSync(ORIGINAIS, { recursive: true })
 let falhas = 0
 for (const item of lerFontes()) {
+  if (!item.url) continue
   const url = new URL(item.url)
   if (url.protocol !== 'https:' || url.hostname !== 'zefir.com.br') {
     console.error(`pulado (fora de zefir.com.br): ${item.url}`)

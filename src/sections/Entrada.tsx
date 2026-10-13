@@ -1,13 +1,18 @@
 import { Foto } from '../components/Foto'
 import { PlantaBote } from '../components/PlantaBote'
 import { Todo } from '../components/Todo'
+import { PROPOSTA } from '../config'
 import { MODELOS } from '../content/catalogo'
 import { foto } from '../content/fotos'
 
 const g500 = MODELOS[0]!
 
 export function Entrada() {
-  const temFoto = Boolean(foto('entrada'))
+  const f = foto('entrada')
+  const temFoto = Boolean(f)
+  // Com foto, o texto fica num painel escuro só onde precisa: a foto continua viva
+  // e o contraste não depende do que estiver por baixo (ver npm run contraste).
+  const painel = temFoto ? 'painel-foto' : ''
 
   return (
     <header
@@ -16,11 +21,13 @@ export function Entrada() {
       }`}
     >
       {temFoto ? (
-        <>
-          <Foto id="entrada" prioridade sizes="100vw" className="absolute inset-0 -z-20 h-full w-full" />
-          {/* película escura sólida para o texto ler sobre qualquer foto */}
-          <div className="absolute inset-0 -z-10 bg-noite/55" aria-hidden="true" />
-        </>
+        <Foto
+          id="entrada"
+          prioridade
+          sizes="100vw"
+          selo={false}
+          className="absolute inset-0 -z-10 h-full w-full"
+        />
       ) : (
         // Sem foto aprovada: o próprio desenho do G500, grande, sangrando para fora da tela.
         <div
@@ -38,36 +45,44 @@ export function Entrada() {
       )}
 
       {/* carimbo de prancha */}
-      <div className="ficha relative z-10 flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-current px-4 py-3 text-[0.6875rem] uppercase md:px-10 md:text-xs">
+      <div
+        className={`ficha relative z-10 flex flex-wrap justify-between gap-x-6 gap-y-1 border-b border-current px-4 py-3 text-[0.6875rem] uppercase md:px-10 md:text-xs ${painel}`}
+      >
         <span>Zefir Indústria e Comércio Ltda.</span>
-        <span>São Paulo-SP · desde 1972</span>
+        <span>São Paulo-SP · fundada em 1972</span>
       </div>
 
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-8 md:px-10 md:pt-12">
-        <h1 className="estencil text-[clamp(6rem,30vw,21rem)] leading-[0.78]">
-          Zefir
-          <span className="mt-3 block font-titulo text-[clamp(1.375rem,4.4vw,2.75rem)] font-semibold tracking-wide">
-            Botes infláveis desde 1972
-          </span>
-        </h1>
+        <div className={temFoto ? `${painel} w-fit max-w-full p-5 md:p-8` : ''}>
+          <h1 className="estencil text-[clamp(6rem,30vw,21rem)] leading-[0.78]">
+            Zefir
+            <span className="mt-3 block font-titulo text-[clamp(1.375rem,4.4vw,2.75rem)] font-semibold tracking-wide">
+              Fábrica de botes infláveis
+            </span>
+          </h1>
 
-        <p className="mt-6 max-w-[18ch] font-titulo text-[clamp(2rem,6vw,4rem)] font-bold uppercase leading-[0.9]">
-          <span className={temFoto ? 'vazado vazado-papel' : 'vazado'}>O 4x4</span> dos mares.
-        </p>
+          <p className="mt-6 max-w-[18ch] font-titulo text-[clamp(2rem,6vw,4rem)] font-bold uppercase leading-[0.9]">
+            <span className={temFoto ? 'vazado vazado-papel' : 'vazado'}>O 4x4</span> dos mares.
+          </p>
 
-        <a
-          href="#prancha"
-          className="link-tinta mt-8 inline-flex w-fit items-baseline gap-3 font-titulo text-2xl font-bold uppercase md:text-3xl"
-        >
-          Montar meu orçamento
-          <span aria-hidden="true" className="ficha text-base font-normal">
-            ↓
-          </span>
-        </a>
+          <a
+            href="#prancha"
+            className="link-tinta mt-8 inline-flex w-fit items-baseline gap-3 font-titulo text-2xl font-bold uppercase md:text-3xl"
+          >
+            Montar meu orçamento
+            <span aria-hidden="true" className="ficha text-base font-normal">
+              ↓
+            </span>
+          </a>
+
+          {PROPOSTA && f?.provisoria ? (
+            <p className="ficha mt-6 w-fit bg-todo px-2 py-0.5 text-xs text-tinta">foto provisória (do site atual)</p>
+          ) : null}
+        </div>
 
         {!temFoto ? (
           <p className="mt-6 max-w-sm">
-            <Todo>foto real do G500 para esta tela (provisória: ZFR-Prod-G500-Pranchas05.jpg, aguardando revisão)</Todo>
+            <Todo>foto real do G500 para esta tela: aguardando os arquivos e a sua revisão (fotos/revisao.md)</Todo>
           </p>
         ) : null}
       </div>

@@ -48,14 +48,20 @@ export function chaveItem(item: ItemLista): string {
 }
 
 export function montarMensagem(itens: ReadonlyArray<ItemLista>, cores = CORES): string {
-  const linhas = itens
-    .slice(0, MAX_ITENS)
+  // primeiro descarta o que não está nas listas, depois limita: item inválido não ocupa vaga
+  const validos = itens
     .map((i) => descreverItem(i, cores))
     .filter((t): t is string => t !== null)
-    .map((t, n) => `${n + 1}. ${t}`)
+    .slice(0, MAX_ITENS)
 
-  const texto = ['Olá, Zefir! Montei esta lista no site e quero um orçamento:', '', ...linhas].join('\n')
-  return texto.length > MAX_CARACTERES ? texto.slice(0, MAX_CARACTERES) : texto
+  // corta por linha inteira, nunca no meio de um item
+  let texto = 'Olá, Zefir! Montei esta lista no site e quero um orçamento:\n'
+  for (const [n, t] of validos.entries()) {
+    const linha = `\n${n + 1}. ${t}`
+    if (texto.length + linha.length > MAX_CARACTERES) break
+    texto += linha
+  }
+  return texto
 }
 
 export function linkWhatsApp(itens: ReadonlyArray<ItemLista>, cores = CORES): string {

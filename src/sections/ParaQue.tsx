@@ -34,8 +34,8 @@ export function ParaQue() {
             também é motivo bom para ter bote.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-tinta-2">
-            Casco em V de fibra, deck antiderrapante, quatro compartimentos e tanque de 110 litros. Aguenta 1.800 kg de
-            carga e leva motor de 90 a 175 hp. Os tubos saem em CSM Hypalon ou PVC nitrílico, em várias cores.
+            Casco em V de fibra, deck antiderrapante, quatro compartimentos e tanque de 110 litros. A carga é de 1.800
+            kg e o motor vai de 90 a 175 hp. Os tubos saem em CSM Hypalon ou PVC nitrílico, em várias cores.
           </p>
           {!temFoto ? (
             <p className="mt-6">

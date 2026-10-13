@@ -2,15 +2,14 @@
 
 Tudo o que aparece como **TODO-CONFIRMAR** no modo proposta. No modo público esses itens somem.
 
-## O que bloqueou a coleta
+## Material (situação na rodada 2)
 
-O ambiente em que o protótipo foi feito **não tinha acesso a zefir.com.br** (o proxy recusou a conexão e o DNS não resolveu). Por isso:
+Na rodada 1 o site da Zefir estava bloqueado na rede do ambiente. Na rodada 2 o combinado era receber os arquivos no repositório, mas **eles não chegaram**:
 
-- as fichas oficiais do G660 Geração I, do 800 Full Popa/Parelha e da categoria 168 (balsa de rafting) **não foram lidas**;
-- nenhuma foto e nem o logo foram baixados;
-- as cores **não foram amostradas**. Os tokens em `src/index.css` são provisórios e estão marcados assim.
+- `fotos/originais/`: pasta não existe (nenhuma foto);
+- `public/logo-original.png`: não existe.
 
-Com acesso ao site: `npm run fotos:baixar`, revisar, `npm run fotos:processar`, `npm run cores`.
+Por isso continuam pendentes: a foto da entrada (o desenho técnico segue no lugar), a revisão das fotos, a amostragem de cores e as fichas do G660, do 800 Full Popa/Parelha e da balsa de rafting. O pipeline está pronto e testado com imagens sintéticas: `npm run fotos:revisao` → sua revisão → `npm run fotos:processar` → `npm run cores` → `npm run contraste`.
 
 ## Depende do dono confirmar
 
@@ -29,13 +28,15 @@ Com acesso ao site: `npm run fotos:baixar`, revisar, `npm run fotos:processar`, 
 | Lista própria de revendedores | Revendedores | Hoje é link para o site atual |
 | Modelos e medidas de cada linha | Linhas de bote | Só os nomes das 8 linhas estão confirmados |
 | Autorização para usar as fotos | Todas as fotos | Provisórias até o dono autorizar |
+| Revisão de cada foto (pessoas, placas, rostos, marcas) | fotos/revisao.md | Nenhuma foto recebida ainda; nenhuma aprovada |
+| Cores da marca | Tokens em src/index.css | Provisórias; logo não recebido |
 
 ## Material que falta
 
 - Foto do G500 para a entrada (provisória prevista: `ZFR-Prod-G500-Pranchas05.jpg`, ainda sem revisão de pessoas, placas e marcas).
 - Foto do G500 em uso para "Para que serve".
 - Fotos da fábrica, se existirem. Sem elas a seção fica curta.
-- Logo em arquivo (`logo-tipo.png`) para amostrar a cor da marca e trocar o favicon provisório.
+- Logo em `public/logo-original.png` para amostrar a cor da marca e trocar o favicon provisório.
 - Vídeo de entrada: não há. Se vier, no máximo 3 MB e respeitando `prefers-reduced-motion`.
 
 ## Antes de tirar o protótipo do ar privado

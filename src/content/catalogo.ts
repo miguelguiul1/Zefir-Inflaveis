@@ -58,7 +58,6 @@ export interface Modelo {
   nome: string
   comprimentoM: number
   comprimentoTexto: string
-  resumo: string
   linhas: Linha[]
   versoes?: Versao[]
   materiais: MaterialId[]
@@ -74,7 +73,6 @@ export const MODELOS: ReadonlyArray<Modelo> = [
     nome: 'G500 Geração II',
     comprimentoM: 5.15,
     comprimentoTexto: '5,15 m',
-    resumo: 'Casco em V de fibra, deck antiderrapante, motor de 90 a 175 hp.',
     linhas: [
       { rotulo: 'Comprimento', valor: '5,15 m' },
       { rotulo: 'Largura', valor: '2,25 m' },
@@ -96,7 +94,6 @@ export const MODELOS: ReadonlyArray<Modelo> = [
     nome: '800 Full',
     comprimentoM: 8,
     comprimentoTexto: '8,00 m',
-    resumo: 'Até 12 pessoas, banheiro interno com 1,90 m de pé-direito, console central com comando TOP.',
     linhas: [
       { rotulo: 'Comprimento', valor: '8,00 m' },
       { rotulo: 'Pessoas', valor: 'até 12' },

@@ -119,7 +119,7 @@ export function Prancha() {
               escala: 5,15 m contra 8,00 m.
             </p>
             <p className="mt-3 text-tinta-2">
-              Toque num bote para abrir a ficha. Escolha o material e a cor, junte na lista e mande pelo WhatsApp.
+              Escolha um bote para abrir a ficha. Depois é material, cor, lista e WhatsApp.
             </p>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function Prancha() {
                     </span>
 
                     <span className="block self-center md:order-none">
-                      <span className="estencil block text-[3.5rem] md:text-[4.25rem]">{m.casco}</span>
+                      <span className="estencil block text-[clamp(2.25rem,12vw,3.5rem)] md:text-[4.25rem]">{m.casco}</span>
                       <span className="mt-2 block font-titulo text-xl font-semibold uppercase tracking-wide text-tinta">
                         {m.nome}
                       </span>

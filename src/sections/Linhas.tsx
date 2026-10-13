@@ -16,7 +16,7 @@ export function Linhas() {
               São oito linhas de bote. Somando tudo o que a fábrica faz, são mais de 35 modelos.
             </p>
             <p className="mt-4 max-w-sm text-tinta-2">
-              Quer a ficha de um modelo que não está na prancha? Está no{' '}
+              Os modelos que não estão na prancha têm ficha no{' '}
               <a href={CONTATO.catalogoUrl} rel={REL_EXTERNO} className="link-tinta text-tinta">
                 catálogo do site atual
               </a>
@@ -73,7 +73,7 @@ export function Linhas() {
                 </span>
               ))}
             </p>
-            <p className="mt-4 max-w-xl text-tinta-2">Os acessórios a gente faz aqui mesmo, na fábrica.</p>
+            <p className="mt-4 max-w-xl text-tinta-2">Os acessórios a Zefir faz na própria fábrica.</p>
           </div>
         </div>
       </div>

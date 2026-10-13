@@ -21,4 +21,9 @@ export default tseslint.config(
     extends: [js.configs.recommended],
     languageOptions: { ecmaVersion: 2023, globals: globals.node },
   },
+  {
+    // funções passadas ao navegador pelo playwright (page.evaluate)
+    files: ['scripts/verificacao/**/*.mjs'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+  },
 )
